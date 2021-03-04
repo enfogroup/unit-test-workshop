@@ -86,7 +86,7 @@ export class Calculator {
   /**
    * Resets current value
    */
-  public reset = () => {
+  public reset = (): void => {
     this.currentValue = 0
   }
 
@@ -94,14 +94,14 @@ export class Calculator {
    * Stores current value for later usage
    */
   // istanbul ignore next, nohing to test here
-  public store = () => {
+  public store = async (): Promise<void> => {
     storage.storeData(this.currentValue)
   }
 
   /**
    * Loads value from storage
    */
-  public load = () => {
+  public load = async (): Promise<void> => {
     try { // this might start to fail, best to have a fallback
       this.currentValue = storage.loadData()
     } catch (_) {
