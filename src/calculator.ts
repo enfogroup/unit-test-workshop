@@ -71,7 +71,7 @@ export class Calculator {
   /**
    * Returns current value
    */
-  public getValue = (): number =>{
+  public get = (): number =>{
     return this.currentValue
   }
 
