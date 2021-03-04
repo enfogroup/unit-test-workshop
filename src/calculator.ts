@@ -74,9 +74,6 @@ export class Calculator {
    */
   public divide = (a: number, b?: number): number => {
     const [left, right] = this.getValues(a, b)
-    if (!right) {
-      throw new Error('Unable to divide by 0')
-    }
     const result = left / right
     this.currentValue = result
     return result
