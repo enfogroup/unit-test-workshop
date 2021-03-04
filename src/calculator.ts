@@ -13,6 +13,17 @@ export class Calculator {
   }
 
   /**
+   * Parses values from operator input
+   * @param a 
+   * A number
+   * @param b
+   * Number or undefined 
+   */
+  private getValues = (a: number, b?: number): number[] => {
+    return typeof b !== 'undefined' ? [a, b] : [this.currentValue, a]
+  }
+
+  /**
    * Adds two values together
    * @param a 
    * Leftside value in operation. If second parameter is not defined this becomes the right hand side operator
@@ -20,7 +31,8 @@ export class Calculator {
    * Rightside value. Optional
    */
   public add = (a: number, b?: number): number => {
-    const result = b ? a + b : a + this.currentValue
+    const [left, right] = this.getValues(a, b)
+    const result = left + right
     this.currentValue = result
     return result
   }
@@ -33,7 +45,8 @@ export class Calculator {
    * Rightside value. Optional
    */
   public subtract = (a: number, b?: number): number => {
-    const result = b ? a - b : a - this.currentValue
+    const [left, right] = this.getValues(a, b)
+    const result = left - right
     this.currentValue = result
     return result
   }
@@ -46,7 +59,8 @@ export class Calculator {
    * Rightside value. Optional
    */
   public multiply = (a: number, b?: number): number => {
-    const result = b ? a * b : a * this.currentValue
+    const [left, right] = this.getValues(a, b)
+    const result = left * right
     this.currentValue = result
     return result
   }
@@ -59,11 +73,11 @@ export class Calculator {
    * Rightside value. Optional
    */
   public divide = (a: number, b?: number): number => {
-    const [dividen, divisor] = typeof b !== 'undefined' ? [a, b] : [this.currentValue, a]
-    if (!divisor) {
+    const [left, right] = this.getValues(a, b)
+    if (!right) {
       throw new Error('Unable to divide by 0')
     }
-    const result = dividen / divisor
+    const result = left / right
     this.currentValue = result
     return result
   }
