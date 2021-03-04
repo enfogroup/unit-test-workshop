@@ -4,13 +4,11 @@ import * as storage from './storage'
  * Calculator class aiming to act like a basic graph calculator
  */
 export class Calculator {
-  private storedValue: number
   private currentValue: number
   /**
    * Creates a new calculator
    */
   constructor() {
-    this.storedValue = 0
     this.currentValue = 0
   }
 
@@ -89,7 +87,7 @@ export class Calculator {
    * Resets current value
    */
   public reset = () => {
-    this.currentValue = this.storedValue = 0
+    this.currentValue = 0
   }
 
   /**
