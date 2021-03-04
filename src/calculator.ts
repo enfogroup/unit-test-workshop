@@ -93,6 +93,7 @@ export class Calculator {
   /**
    * Stores current value for later usage
    */
+  // istanbul ignore next, nohing to test here
   public store = () => {
     storage.storeData(this.currentValue)
   }
