@@ -1,3 +1,5 @@
+import * as storage from './storage'
+
 /**
  * Calculator class aiming to act like a basic graph calculator
  */
@@ -63,7 +65,7 @@ export class Calculator {
     if (!divisor) {
       throw new Error('Unable to divide by 0')
     }
-    const result = dividen/divisor
+    const result = dividen / divisor
     this.currentValue = result
     return result
   }
@@ -71,7 +73,7 @@ export class Calculator {
   /**
    * Returns current value
    */
-  public get = (): number =>{
+  public get = (): number => {
     return this.currentValue
   }
 
@@ -94,13 +96,17 @@ export class Calculator {
    * Stores current value for later usage
    */
   public store = () => {
-    this.storedValue = this.currentValue
+    storage.storeData(this.currentValue)
   }
 
   /**
    * Loads value from storage
    */
   public load = () => {
-    this.currentValue = this.storedValue
+    try { // this might start to fail, best to have a fallback
+      this.currentValue = storage.loadData()
+    } catch (_) {
+      this.currentValue = 0
+    }
   }
 }
