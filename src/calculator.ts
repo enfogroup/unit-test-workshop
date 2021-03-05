@@ -20,7 +20,7 @@ export class Calculator {
    * Number or undefined 
    */
   private getValues = (a: number, b?: number): number[] => {
-    return !b ? [a, b] : [this.currentValue, a]
+    return b ? [a, b] : [this.currentValue, a]
   }
 
   /**
