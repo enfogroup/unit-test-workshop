@@ -1,5 +1,5 @@
 {
-  "name": "hackathon-unit-tests",
+  "name": "unit-test-workshop",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/enfogroupcloud/hackathon-unit-tests.git"
+    "url": "https://github.com/enfogroup/unit-test-workshop"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/enfogroupcloud/hackathon-unit-tests#readme",
+  "homepage": "https://github.com/enfogroup/unit-test-workshop",
   "devDependencies": {
     "@types/jest": "^26.0.20",
     "jest": "^26.6.3",
