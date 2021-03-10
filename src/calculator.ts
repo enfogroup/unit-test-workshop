@@ -52,7 +52,7 @@ export class Calculator {
   }
 
   /**
-   * Adds two values together
+   * Multiples two values
    * @param a 
    * Leftside value in operation. If second parameter is not defined this becomes the right hand side operator
    * @param b 
@@ -66,7 +66,7 @@ export class Calculator {
   }
 
   /**
-   * Adds two values together
+   * Divides two values
    * @param a 
    * Dividend value in operation. If second parameter is not defined this becomes the divisor
    * @param b 
