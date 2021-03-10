@@ -1,34 +1,17 @@
-# About
+# Conclusion
 
-This is a small unit test workshop. Your task is to work on unit tests for a simple calculator. 
+Congratulations, you have completed the workshop! Now run "npm test" and hopefully you should see plenty of broken unit tests. The following bugs and changes in behavior have been introduced:
 
-## Getting started
+* The private method getValues has been poorly refactored and now only checks if b is truthy. Operations where the second parameter is zero will now occasionally lead to unintended behavior. For example calculator.set(1) followed by calculator.add(5, 0) will return 6 instead of 5.
+* The check for divisor 0 in divide has been removed.
+* Storage has broken down. Your tests for load are hopefully still working!
 
-* Clone the repository
-* Run npm install
-* Run npm test
-* Work on improving test coverage by adding tests to calculator.spec.ts. Avoid updating other files
-* When you are feeling done pull from the branch broken-refactoring
-* Run your tests again and see which bugs you find
+## Talking points
 
-## The calculator
+Here are some talking points.
 
-This project implements a simple calculator. The idea is that previous values can be reused for the next operation. In addition it has support for storing/loading data. Example usage:
-
-```
-import { Calculator } from './src/calculator'
-
-const calculator = new Calculator()
-
-calculator.add(5, 3) // returns 8 which is also stored internally
-calculator.add(32) // adds 8+32 returning 42 which is also stored internally
-calculator.store() // stores 42
-calculator.multiply(5, 3) // returns 15 which is also stored internally
-calculator.get() // returns 15
-calculator.load() // attempts to load 42 from memory
-calculator.get() // might return 42 or 0 as a fallback
-```
-
-## Writing tests
-
-Most tests you will write for this project will be of a basic testing nature. Update internal value, perform an action and check the output. One method will require you to mock a function from another file.
+* Were your tests written as stand alone tests? Can they be run individually?
+* The real value of test coverage.
+* Did you write stable tests or did you end up relying on randomness?
+* Utilizing the functionality of the testing framework. If you feel like you are doing something weird then the framework can probably assist you
+* Testing in frontend
