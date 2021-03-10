@@ -21,7 +21,7 @@ import { Calculator } from './src/calculator'
 const calculator = new Calculator()
 
 calculator.add(5, 3) // returns 8 which is also stored internally
-calculator.add(32) // adds 8+32 returning 42 which is also stored internally
+calculator.add(32) // adds 8+34 returning 42 which is also stored internally
 calculator.store() // stores 42
 calculator.multiply(5, 3) // returns 15 which is also stored internally
 calculator.get() // returns 15
