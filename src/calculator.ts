@@ -113,6 +113,10 @@ export class Calculator {
    * Loads value from storage
    */
   public load = async (): Promise<void> => {
-    this.currentValue = storage.loadData()
+    try { // this might start to fail, best to have a fallback
+      this.currentValue = storage.loadData()
+    } catch (_) {
+      this.currentValue = 0
+    }
   }
 }

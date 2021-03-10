@@ -16,8 +16,5 @@ export const storeData = (data: number): void => {
  * Loads data from disk
  */
 export const loadData = (): number => {
-  if (Math.random() < 0.5) {
-    throw new Error('Unable to read memory')
-  }
-  return ephemeralStorage
+  throw new Error('Unable to read memory')
 }
