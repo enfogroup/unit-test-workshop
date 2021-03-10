@@ -8,8 +8,8 @@ This is a small unit test workshop. Your task is to work on unit tests for a sim
 * Run npm install
 * Run npm test
 * Work on improving test coverage by adding tests to calculator.spec.ts. Avoid updating other files
-* When you are feeling done pull from the branch broken-refactoring. You can achieve this by running "git pull --origin broken-refactoring"
-* Make sure you read the README on the branch. It contains information about the introduced changes in behavior and bugs. In addition there are a few talking points regarding testing.
+* When you are feeling done pull from the branch broken-refactoring. You can achieve this by running "git pull origin broken-refactoring"
+* Make sure you read UPDATES.MD on the branch. It contains information about the introduced changes in behavior and bugs. In addition there are a few talking points regarding testing.
 
 ## The calculator
 
